@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yyy.mapper.UserMapper">
+	<sql id="user">
+		uid,uname,upassword,uemail,uphone,uflag,uaccountnum
+	</sql>
+	<insert id="register" parameterType="com.yyy.model.User">
+		insert into t_user(uname,upassword,uemail,uphone,uflag,uaccountnum) 
+		values (#{uname},#{upassword},#{uemail},#{uphone},#{uflag},#{uaccountnum})
+	</insert>
+	<select id="searchById" parameterType="int" resultType="com.yyy.model.User">
+		select <include refid="user"></include> from t_user where 
+		uid = #{value}
+	</select>
+	<select id="login"  resultType="com.yyy.model.User">
+		select <include refid="user"></include> from t_user where 
+		uaccountnum = #{uaccountnum} and upassword =#{upassword}
+	</select>
+	<update id="update" parameterType="com.yyy.model.User">
+		update t_user set uname=#{uname}, 
+		upassword=#{upassword},uemail=#{uemail},uphone=#{uphone} where uid = #{uid}
+	</update>
+</mapper>

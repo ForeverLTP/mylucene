@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yyy.mapper.PrescriptionMapper">
+	<sql id="pre">
+	pid,pname,psource,pcomposition,pusage,peffect,pindications
+,psolution,pclinical_application,pban,psong
+
+	</sql>
+	<select id="initPrescription" resultType="com.yyy.model.Prescription">
+		select <include refid="pre"></include> from t_prescription_details
+	</select>
+	<select id="prescriptionPage" parameterType="int" resultType="com.yyy.model.Prescription">
+		select <include refid="pre"></include> from t_prescription_details limit #{start},#{end}
+	</select>
+	<select id="prePageMaxNum" resultType="int">
+ 	select count(*) from t_prescription_details
+ 	</select>
+ 	<select id="getPreDetails" resultType="com.yyy.model.Prescription">
+		select <include refid="pre"></include> from t_prescription_details where
+		pid = #{value}
+	</select>
+</mapper>

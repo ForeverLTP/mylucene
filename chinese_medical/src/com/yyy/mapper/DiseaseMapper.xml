@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yyy.mapper.DiseaseMapper">
+ 
+ <sql id="disease">
+ 	did,dname,dalias,ddescription,dsympton
+ </sql>
+ <sql id="symptom">
+ 	sid,sname,salias,sdescription,sdisease
+ </sql>
+ <select id="initDisease"  resultType="com.yyy.model.Disease">
+ 	select <include refid="disease"></include> from t_disease
+ </select>
+ <select id="initSymptom" resultType="com.yyy.model.Symptom">
+ 	select<include refid="symptom"></include> from t_symptom
+ </select>
+ <select id="diseasePage" parameterType="int" resultType="com.yyy.model.Disease">
+ 	select <include refid="disease"></include> from t_disease limit #{start},#{end}
+ </select>
+ <select id="pageMaxNum" resultType="int">
+ 	select count(*) from t_disease
+ </select>
+ <select id="symptomPage" parameterType="int" resultType="com.yyy.model.Symptom">
+ 	select <include refid="symptom"></include> from t_symptom limit #{start},#{end}
+ </select>
+ <select id="symptomPageMaxNum" resultType="int">
+ 	select count(*) from t_symptom
+ </select>
+ <select id="getDisDetails" parameterType="int" resultType="com.yyy.model.Dis_details">
+ 	select did,dintroduce,dknowlege,dcure  from t_disease_details where did = #{value} 	
+ </select>
+ <select id="getSyDetails" parameterType="int" resultType="com.yyy.model.Sy_details">
+ 	select sid,ssymptom,sreason from t_symptom_details where sid = #{value} 	
+ </select>
+</mapper>

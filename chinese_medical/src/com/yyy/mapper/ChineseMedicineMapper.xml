@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yyy.mapper.ChineseMedicineMapper">
+
+	<sql id="cm">
+		mid,mname,mtype,mpinyin,malias,msource,mtraits,msexuality,mfunction,
+		mclinical_application,mchemical_composition,mban,mprescription
+	</sql>
+	<select  id="initChineseMedicine"  resultType="com.yyy.model.ChineseMedicine">
+		select <include refid="cm"></include> from t_chinesemedicine_details
+	</select>
+	<select id="chineseMedicinePage" parameterType="int" resultType="com.yyy.model.ChineseMedicine">
+		select <include refid="cm"></include> from t_chinesemedicine_details
+		 limit #{start},#{end}
+	</select>
+	<select id="cmPageMaxNum" resultType="int">
+ 	select count(*) from t_chinesemedicine_details
+ 	</select>
+ 	<select id="getCMDetails" resultType="com.yyy.model.ChineseMedicine">
+ 		select <include refid="cm"></include> from t_chinesemedicine_details 
+ 		where mid = #{value}
+ 	</select>
+</mapper>
+

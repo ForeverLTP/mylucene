@@ -1,0 +1,211 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+<title>中医辅助诊断系统-中医科普</title>
+
+<link type="text/css" rel="stylesheet" href="css/common.css" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+<!-- 先加载jq之后才加载js,否则报错(bootstrap) -->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/time.js"></script>
+
+<script type="text/javascript" src="js/jquery.tabs.js"></script>
+<script type="text/javascript" src="js/jquery.lazyload.js"></script>
+
+<style type="text/css">
+
+/* box */
+.box {
+	width: 880px;
+	margin: auto;
+	background: #fff;
+	border: 1px solid #d3d3d3;
+	height: 730px;
+}
+
+.tab_menu {
+	float: left;
+	overflow: hidden;
+	margin-left: 5px;
+}
+
+.tab_menu li {
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #fff;
+	color: #fff;
+	list-style-type: none;
+	background: #194069;
+	text-align: center;
+	cursor: pointer;
+}
+
+.tab_menu li.current {
+	color: #333;
+	background: #fff;
+}
+
+.tab_menu li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.tab_menu li.current a {
+	color: #194069;
+}
+
+.tab_box {
+	float: left;
+	padding: 20px;
+	margin: auto;
+	margin-left: 20px;
+	margin-top:;
+}
+
+.tab_box li {
+	height: auto;
+	width: 600px;
+	line-height: auto;
+	display: block;
+}
+
+.tab_box li span {
+	height: auto;
+	width: 600px;
+	margin: 0 5px 0 0;
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight: 400;
+	color: #ddd;
+}
+
+.tab_box .hide {
+	display: none;
+}
+}
+</style>
+</head>
+<body>
+
+	<div class="box demo2">
+
+		<ul class="tab_menu">
+			<li class="current">模糊概念格</li>
+			<li>中医症状</li>
+			<li>常见症状</li>
+			<li>中医症候</li>
+			<li>常见症候</li>
+			<li>常见中药</li>
+			<li>中药药方</li>
+			<li>中文分词</li>
+			<li>九种体质</li>
+			<li>中医养生时钟</li>
+		</ul>
+
+		<div class="tab_box">
+
+			<div>
+
+				<ul>
+
+					<li><a  title="概念格" style="margin-left: 25px;"> <strong>概念格</strong>是形式概念分析所用到的核心数据结构，
+							已经越来越广泛地被应用到人工智能或者是数据分析等领域之
+					</a></li>
+					<li><a  title="概念格">
+							中。而一般的形式概念分析是基于精确的形式背景，但是在现实世界中， 由于事物的复杂性与多样性，使人们对于<br />事物的认识，对概念的定义
+							很难用精确的数据来进行表示。所以，为了是形式概念分析能够更加广泛的 被应用到各<br />个研究领域当中，一些学者们将模糊集的理论和模糊逻辑，
+							以及经典概念格理论（精确概念格理论）这三个研究方<br />向相结合，从
+							而提出了模糊形式概念分析与模糊概念格理论这一个新的研究方向，同时模 糊概念格的构造问题就成<br />为了学者们研究的首要课题。根据概念格的
+							数据结构本身的特点可以得知，当前，如何处理大规模的模糊形式背景<br />，
+							以及如何构造大规模的模糊概念格成了该领域中比较主要问题之一。而德国的学 者Radim Bělohlávek等人为解决<br />大规模数据生成概念格，简化大
+							型模糊概念格，以及高效地生成模糊概念格等问题，提出了一系列的相关理论与算法 <br />其中提到了因子格的构造，却并未给出完整的因子格的构造算法。
+					</a></li>
+					<li><a  title="概念格" style="margin-left: 25px;">
+							本系统为了完善辅助诊断模糊概念格因子格的构造算法，利用基于模糊概念相似性的模糊概念 格因子格构造算</a></li>
+					<li><a  title="概念格">法。首先文
+							中对模糊概念格的相关研究背景加以概括，同时对模糊概念格的相关基本概念进行了介绍。 然后，对于<br />目前已经提出的模糊概念格的相关构造算法进行了阐述与概括，指出当
+							前模糊概念格构造算法所存在的问题，进而<br />提出本论文的研究方向。接着为了完善模
+							糊因子格的构造,提出了一种基于模糊概念相似性的模糊因子格的构造算法<br /> (Factor Lattice
+							Algorithm）。其中，该算法以用户自定义的相似性真值 为一个阈值，依据已给出的模糊概念因子<br />格的上确界,采用批处理的方式,根据模
+							糊下邻生成因子自顶向下地计算出模糊概念节点的直接下邻节点的集合，逐步<br />得到
+							完备的模糊因子格。并从理论方面对算法的正确性进行证明，首先证明因子格的上确界所具 有的局部最小性，<br />下确界具有局部最大的性质，接着证明在调整相似性的值得同
+							时，概念格的大小也会随之改变，最后对生成格的偏<br />序顺序进行证明。文章的第
+							五部分是从实验的方面证明,算法生成格的完备性，以验证算法的有效性；调整相似性的<br />
+							大小验证算法的正确性。最后一部分提出了算法有待改进的地方，以及下一步的工作方向。
+					</a></li>
+					<li><a  title="概念格" style="margin-left: 85px;">--摘录于《百度百科》</a></li>
+				</ul>
+
+			</div>
+
+			<div class="hide">
+
+				<ul>
+
+					<li><a  title="症状" style="margin-left: 25px;"><strong>症状</strong>是指疾病过程中机体内的一系列机能、代谢和形态结构异常变化所引起的病人主观上的异常感觉或某些客<br />观病态改变称为症状（symptom)。</a></li>
+					<li><a  title="症状" style="margin-left: 25px;"><strong>症状表现</strong>有多种形式，有的只有主观才能感觉到的，如疼痛、眩晕等；有些不仅能主观感觉到，而且客观检查<br />也能发现，如发热、黄疸、呼吸困难等；也有主观无异常感觉，是通过客观检查才发现的，如黏膜出血、腹部包块<br />等；还有些生命现象发生了质量变化（不足或超过），如肥胖、消瘦、多尿、少尿等，需通过客观评定才能确定、<br />凡此种种，广义上均可视为症状（即广义的症状），也包括了一些体征。</a></li>
+					<li><a  title="症状" style="margin-left: 25px;">一般说的症状是<strong>广义症状</strong>,
+							包含症状和体征两个方面, 指疾病引起患者的主观不适、异常感觉、功能变化或明显<br />的病态改变。临床常见的重要症状有发热、疼痛、体重改变、浮肿、呼吸困难、咳嗽、咳痰、咯血、食欲减退、消<br />化不良、吞咽困难、恶心呕吐、呕血、便血、黄疸、排尿异常、贫血、休克等。
+					</a></li>
+					<li><a  title="症状" style="margin-left: 25px;">有的疾病，特别是在某些疾病的早期，也可以不伴有症状和体征。据调查，成年人大多都有动脉粥硬化，但其<br />中只有少数人出现临床症状；许多早期癌症的患者也可以毫无主观症状和容易察见的体征。但如果对这些无症状患<br />者进行相应的实验或特殊检查，往往能够发现异常变化。因此，对某些疾病如恶性肿瘤、动脉粥硬化、血吸虫病等<br />在一范围内进行普查，以求早期诊断和早期治疗，是非常重要的。
+					</a></li>
+					<li><a  title="症状" style="margin-left: 85px;">--摘录于《百度百科》</a></li>
+				</ul>
+
+			</div>
+
+			<div class="hide">
+
+				<ul>
+
+					<li><a href="#" title="常见症状" style="margin-left: 25px;"><strong>临床常见</strong>的重要症状有发热、疼痛、体重改变、浮肿、呼吸困难、咳嗽、咳痰、咯血、食欲减退、消化不良、<br />吞咽困难、恶心呕吐、呕血、便血、黄疸、排尿异常、贫血、休克等。</a></li>
+					<li><a href="#" title="常见症状" style="margin-left: 85px;">--摘录于《百度百科》</a></li>
+				</ul>
+
+			</div>
+
+			<div class="hide">
+
+				<ul>
+
+					<li><a  title="症候" style="margin-left: 25px;"><strong>症候</strong>是由若干症状综合构成的，可以说是症状的复合，相当于西医Syndrome。中风时出现牙关紧闭、面赤、<br />气粗、痰涎壅盛、两手握固，脉弦滑或沉缓等，称为“闭症”。气息微弱，四肢厥冷，汗出如珠，口开目合，手撒<br />遗尿，脤微细欲绝或沉伏等，称为“脱症”。闭症、脱症，这些都是疾病的症候。</a></li>
+					<li><a  title="症候" style="margin-left: 25px;"><strong>症</strong>，来自中医的征,即表征,表现出的现象。</a></li>
+					<li><a  title="症候" style="margin-left: 25px;"><strong>候</strong>，时令名，五天为一候,这里指长时间的有规律性的外在表现疾病。</a></li>
+					<li><a  title="症候" style="margin-left: 25px;"><strong>元
+								无名氏</strong> 《碧桃花》第二折：“我害的病，不阴不阳，发寒发热，不如是甚么症候。”</a></li>
+					<li><a  title="症候" style="margin-left: 25px;"><strong>《说岳全传》</strong>
+							第十三回：“令尊不知害的什么症候？如今却在何处？”</a></li>
+					<li><a  title="症候" style="margin-left: 25px;"><strong>郭沫若</strong>
+							《沸羹集·&lt;才力·命&gt;》：“治疗这种症候，在现代是极其平常的事了，只消把扁桃腺割掉，孩子便会<br />聪明起来。”</a></li>
+					<li><a  title="症候" style="margin-left: 25px;"><strong>明
+								王守仁</strong>《寄杨仕德书》：“大抵忘己逐物，虚内事外，是近来学者时行症候。</a></li>
+					<li><a  title="症候" style="margin-left: 25px;"><strong>明
+								李贽 </strong> 《道教钞小引》：“若一息不铭刻，则骄气作，态色著，淫志生，祸至无日矣。余老且死，犹时时犯<br />此症候，几为人所鱼肉。”</a></li>
+					<li><a  title="症候" style="margin-left: 25px;"><strong>鲁迅</strong>
+							《而已集·答有恒先生》：“好几个满肚子恶意的所谓批评家，竭力搜索，都寻不出我的真症候。”</a></li>
+					<li><a  title="症候" style="margin-left: 25px;"><strong>杨朔</strong>
+							《模》：“他停下手，急忙跑过来，扒开牛嘴看看，又细细地各处端量一阵，不见什么特别的症候，知道<br />只是牛刚吃饱，赶得太快，肚子一时痛起来。”</a></li>
+					<li><a  title="常见症状" style="margin-left: 485px;">--摘录于《百度百科》</a></li>
+				</ul>
+
+			</div>
+
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			$("img[original]").lazyload({
+				placeholder : "images/color3.gif"
+			});
+			$('.demo2').Tabs({
+				event : 'click'
+			});
+		});
+	</script>
+</body>
+</html>
